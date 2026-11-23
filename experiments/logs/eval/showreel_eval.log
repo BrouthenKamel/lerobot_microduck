@@ -1,0 +1,12 @@
+eval done (196s)
+stage  0: goals 20/20, mean 3.3s -> seed 424246
+stage  1: goals 20/20, mean 8.0s -> seed 424260
+stage  2: goals 19/20, mean 12.3s -> seed 424243
+stage  3: goals 20/20, mean 18.3s -> seed 424246
+stage  4: goals 19/20, mean 20.5s -> seed 424255
+stage  5: goals 16/20, mean 26.7s -> seed 424257
+stage  6: goals 19/20, mean 27.0s -> seed 424258
+stage  7: goals 19/20, mean 24.2s -> seed 424244
+stage  8: goals 18/20, mean 23.5s -> seed 424244
+stage  9: goals 14/20, mean 27.4s -> seed 424261
+stage 10: goals 8/20, mean 23.6s -> seed 424247

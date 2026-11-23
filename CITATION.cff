@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Microduck football: privileged RL teacher -> LeRobot dataset -> ACT + DAgger camera student, and 2v2 MAPPO self-play"
+authors:
+  - alias: BrouthenKamel
+type: software
+license: Apache-2.0
+date-released: 2026-11-23
+keywords: [robotics, lerobot, reinforcement-learning, imitation-learning, dagger, act, mujoco, microduck, multi-agent]
+references:
+  - type: software
+    title: "LeRobot"
+    authors: [{ name: "Hugging Face" }]
+    url: "https://github.com/huggingface/lerobot"
+  - type: software
+    title: "microduck_rl"
+    authors: [{ name: "Pollen Robotics" }]
+    url: "https://github.com/pollen-robotics/microduck_rl"
+  - type: software
+    title: "BAM: Better Actuator Models"
+    authors: [{ name: "Rhoban" }]
+    url: "https://github.com/Rhoban/bam"

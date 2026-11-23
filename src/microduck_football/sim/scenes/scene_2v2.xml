@@ -1,0 +1,62 @@
+<mujoco model="scene_2v2">
+    <!-- 2v2 pitch: ball + walls + two goals, NO robot (multi_sim.py attaches 4 prefixed ducks:
+         b0_/b1_ = blue, attacks +x; r0_/r1_ = red, attacks -x).
+         Pitch: x in [-1.7, 1.7], y in [-1.0, 1.0] (3.4 x 2.0 m). Goals identical to the
+         single-duck scene (0.5 m mouth, 0.3 m high, net box behind) so the attacking half looks
+         like the open-play teacher's pitch. Goal detection in multi_sim.py. -->
+    <include file="ball.xml" />
+
+    <compiler angle="radian" />
+    <option timestep="0.005" />
+
+    <visual>
+        <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+        <rgba haze="0.15 0.25 0.35 1" />
+        <global azimuth="90" elevation="-55" offwidth="1280" offheight="720" />
+    </visual>
+
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+        <texture type="2d" name="grass" builtin="checker" mark="none" rgb1="0.18 0.45 0.2"
+            rgb2="0.15 0.40 0.17" width="300" height="300" />
+        <material name="grass" texture="grass" texuniform="true" texrepeat="16 16" reflectance="0" />
+        <material name="wall" rgba="0.9 0.9 0.9 1" />
+        <material name="post" rgba="1 1 1 1" />
+        <material name="net_blue" rgba="0.2 0.4 0.95 1" />
+        <material name="net_red" rgba="0.95 0.25 0.2 1" />
+        <material name="line" rgba="1 1 1 1" />
+    </asset>
+
+    <worldbody>
+        <light pos="0 0 4" dir="0 0 -1" directional="true" castshadow="false" />
+        <geom name="floor" size="5 5 0.05" pos="0 0 0" type="plane" material="grass" />
+
+        <geom type="box" pos="0 0 0.0005" size="0.004 1.0 0.0005" material="line" contype="0" conaffinity="0"/>
+        <geom type="cylinder" pos="0 0 0.0005" size="0.25 0.0005" rgba="1 1 1 0.35" contype="0" conaffinity="0"/>
+
+        <geom name="wall_left"  type="box" pos="0  1.005 0.05" size="1.71 0.005 0.05" material="wall"/>
+        <geom name="wall_right" type="box" pos="0 -1.005 0.05" size="1.71 0.005 0.05" material="wall"/>
+
+        <!-- +x end: the goal BLUE attacks (red's goal, red net) -->
+        <geom name="wall_px_l" type="box" pos="1.705  0.625 0.05" size="0.005 0.375 0.05" material="wall"/>
+        <geom name="wall_px_r" type="box" pos="1.705 -0.625 0.05" size="0.005 0.375 0.05" material="wall"/>
+        <geom name="post_px_l" type="cylinder" fromto="1.7  0.25 0 1.7  0.25 0.3" size="0.01" material="post"/>
+        <geom name="post_px_r" type="cylinder" fromto="1.7 -0.25 0 1.7 -0.25 0.3" size="0.01" material="post"/>
+        <geom name="bar_px" type="cylinder" fromto="1.7 -0.25 0.3 1.7 0.25 0.3" size="0.01" material="post"/>
+        <geom name="net_px_back"  type="box" pos="1.85 0 0.15"  size="0.005 0.25 0.15" material="net_red"/>
+        <geom name="net_px_left"  type="box" pos="1.775  0.25 0.15" size="0.075 0.005 0.15" material="net_red"/>
+        <geom name="net_px_right" type="box" pos="1.775 -0.25 0.15" size="0.075 0.005 0.15" material="net_red"/>
+        <geom name="net_px_top"   type="box" pos="1.775 0 0.3"  size="0.075 0.25 0.005" material="net_red"/>
+
+        <!-- -x end: the goal RED attacks (blue's goal, blue net) -->
+        <geom name="wall_nx_l" type="box" pos="-1.705  0.625 0.05" size="0.005 0.375 0.05" material="wall"/>
+        <geom name="wall_nx_r" type="box" pos="-1.705 -0.625 0.05" size="0.005 0.375 0.05" material="wall"/>
+        <geom name="post_nx_l" type="cylinder" fromto="-1.7  0.25 0 -1.7  0.25 0.3" size="0.01" material="post"/>
+        <geom name="post_nx_r" type="cylinder" fromto="-1.7 -0.25 0 -1.7 -0.25 0.3" size="0.01" material="post"/>
+        <geom name="bar_nx" type="cylinder" fromto="-1.7 -0.25 0.3 -1.7 0.25 0.3" size="0.01" material="post"/>
+        <geom name="net_nx_back"  type="box" pos="-1.85 0 0.15"  size="0.005 0.25 0.15" material="net_blue"/>
+        <geom name="net_nx_left"  type="box" pos="-1.775  0.25 0.15" size="0.075 0.005 0.15" material="net_blue"/>
+        <geom name="net_nx_right" type="box" pos="-1.775 -0.25 0.15" size="0.075 0.005 0.15" material="net_blue"/>
+        <geom name="net_nx_top"   type="box" pos="-1.775 0 0.3"  size="0.075 0.25 0.005" material="net_blue"/>
+    </worldbody>
+</mujoco>

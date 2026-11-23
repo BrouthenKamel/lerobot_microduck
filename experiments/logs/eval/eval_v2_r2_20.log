@@ -1,0 +1,24 @@
+Loading weights from local directory
+ep   0: GOAL    t= 17.9s falls=0 ball->goal=0.09 m
+ep   1: GOAL    t= 15.5s falls=0 ball->goal=0.06 m
+ep   2: GOAL    t= 26.5s falls=0 ball->goal=0.11 m
+ep   3: GOAL    t= 42.8s falls=0 ball->goal=0.15 m
+ep   4: GOAL    t= 28.5s falls=0 ball->goal=0.08 m
+ep   5: timeout t= 90.2s falls=0 ball->goal=0.28 m
+ep   6: timeout t= 90.2s falls=0 ball->goal=0.27 m
+ep   7: GOAL    t= 24.6s falls=0 ball->goal=0.16 m
+ep   8: timeout t= 90.2s falls=0 ball->goal=0.40 m
+ep   9: GOAL    t= 15.6s falls=0 ball->goal=0.15 m
+ep  10: GOAL    t= 17.9s falls=0 ball->goal=0.19 m
+ep  11: GOAL    t= 29.5s falls=0 ball->goal=0.07 m
+ep  12: GOAL    t= 19.7s falls=0 ball->goal=0.21 m
+ep  13: GOAL    t= 20.0s falls=0 ball->goal=0.12 m
+ep  14: GOAL    t= 15.2s falls=0 ball->goal=0.07 m
+ep  15: GOAL    t= 34.1s falls=0 ball->goal=0.21 m
+ep  16: GOAL    t= 21.9s falls=0 ball->goal=0.18 m
+ep  17: timeout t= 90.2s falls=0 ball->goal=0.30 m
+ep  18: GOAL    t= 16.4s falls=0 ball->goal=0.21 m
+ep  19: GOAL    t= 22.6s falls=0 ball->goal=0.04 m
+
+ACT student [n_action_steps=5] / stage 3: goals 16/20, time-to-goal 23.0s, falls/ep 0.00, |yaw-rate error| vs smoothed teacher 0.31 rad/s, near-goal stalls 4 (timeouts with the ball < 0.5 m from goal), eval wall time 201s
+student action histogram: {'straight': 1703, 'turn right': 970, 'turn left': 880}

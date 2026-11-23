@@ -1,0 +1,24 @@
+# secrets
+.env
+
+# python / tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# local clones / outputs (published artefacts live on the Hugging Face Hub)
+modules/
+runs/
+data/
+mlruns/
+outputs/
+archive/
+obstacle_layouts.png
+
+# downloaded from the HF Hub (tools/download_models.py)
+models/act_camera_student/
+
+uv.lock
+# per-chapter clips and raw renders (regenerate with tools/videos.py); walkthrough.mp4 + GIFs are committed
+assets/media/walkthrough/

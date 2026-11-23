@@ -1,0 +1,18 @@
+<mujoco model="microduck_ball">
+    <compiler angle="radian" autolimits="true"/>
+
+    <worldbody>
+        <!-- 70mm-diameter, 15g hollow plastic ball (floorball-like), same as microduck_rl's ball.xml.
+             Inertia = (2/3) m r^2 (thin hollow sphere) = 1.225e-5 kg m^2.
+             condim="6" so the rolling friction actually applies: the original file declares it
+             with the default condim=3, where MuJoCo ignores torsional/rolling friction and the
+             ball rolls as on ice.  Rolling coefficient tuned to turf-like rolling resistance
+             (see football/README / calibration in duck_sim checks). -->
+        <body name="ball" pos="0.3 0 0.035">
+            <freejoint name="ball_free"/>
+            <inertial pos="0 0 0" mass="0.015" diaginertia="1.225e-5 1.225e-5 1.225e-5"/>
+            <geom type="sphere" name="ball_geom" size="0.035" rgba="1 0.55 0 1" condim="6"
+                  friction="0.5 0.005 0.003"/>
+        </body>
+    </worldbody>
+</mujoco>

@@ -1,0 +1,16 @@
+Loading weights from local directory
+ep   0: GOAL    t= 30.0s falls=0 ball->goal=0.11 m
+ep   1: timeout t= 90.2s falls=2 ball->goal=0.32 m
+ep   2: GOAL    t= 21.7s falls=0 ball->goal=0.11 m
+ep   3: GOAL    t= 19.5s falls=0 ball->goal=0.19 m
+ep   4: GOAL    t= 26.3s falls=0 ball->goal=0.20 m
+ep   5: GOAL    t= 14.4s falls=0 ball->goal=0.18 m
+ep   6: timeout t= 90.2s falls=0 ball->goal=0.35 m
+ep   7: GOAL    t= 32.2s falls=0 ball->goal=0.19 m
+ep   8: GOAL    t= 50.6s falls=0 ball->goal=0.21 m
+ep   9: timeout t= 90.2s falls=0 ball->goal=0.35 m
+ep  10: timeout t= 90.2s falls=0 ball->goal=0.36 m
+ep  11: timeout t= 90.2s falls=0 ball->goal=0.40 m
+
+ACT student [n_action_steps=5] / stage 3: goals 7/12, time-to-goal 27.8s, falls/ep 0.17, |yaw-rate error| vs smoothed teacher 0.24 rad/s, eval wall time 215s
+student action histogram: {'straight': 1686, 'turn right': 1008, 'turn left': 477}
